@@ -4,7 +4,7 @@ import NoteContext from "./NoteContext";
 const NoteState = (props)=>{
        const notesinitial = [
         {
-          "_id": "65e4b0c4b73003959c876eb2f",
+          "_id": "65e4b0c4b73003959c876eb23",
           "user": "65e1f375dbc6517f8dc82506",
           "title": "Our Blog",
           "description": "this is my blog",
@@ -13,7 +13,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-          "_id": "65e4b12fb70033959c876eb31",
+          "_id": "65e4b12fb70033959c876eb33",
           "user": "65e1f375dbc6517f8dc82506",
           "title": "Our Blog",
           "description": "this is my blog",
@@ -22,7 +22,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-          "_id": "65e4b12fb70033959c876eb33",
+          "_id": "65e4b12fb70033959c876eb32",
           "user": "65e1f375dbc6517f8dc82506",
           "title": "Our Blog",
           "description": "this is my blog",
@@ -40,7 +40,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-          "_id": "65e4b12fb70033959c876eb35",
+          "_id": "65e4b12fb70033959c876eb36",
           "user": "65e1f375dbc6517f8dc82506",
           "title": "Our Blog",
           "description": "this is my blog",
@@ -49,7 +49,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-          "_id": "65e4b12fb70033959c876eb35",
+          "_id": "65e4b12fb70033959c876eb37",
           "user": "65e1f375dbc6517f8dc82506",
           "title": "Our Blog",
           "description": "this is my blog",
@@ -58,7 +58,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-          "_id": "65e4b12fb70033959c876eb35",
+          "_id": "65e4b12fb70033959c876eb38",
           "user": "65e1f375dbc6517f8dc82506",
           "title": "Our Blog",
           "description": "this is my blog",
@@ -67,7 +67,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-          "_id": "65e4b12fb70039359c876eb35",
+          "_id": "65e4b12fb70039359c876eb39",
           "user": "65e1f375dbc6517f8dc82506",
           "title": "Our Blog",
           "description": "this is my blog",
@@ -83,7 +83,7 @@ const NoteState = (props)=>{
 
       // Add a Note 
       const addNote = (title,description,tag)=>{
-        // TODO API Call
+        // TODO: API Call
         console.log("Adding a new note")
        const note ={
           "_id": "65e4b12fb70039359c876eb35",
@@ -98,8 +98,11 @@ const NoteState = (props)=>{
       }
 
       //Delete a Note
-      const deleteNote = ()=>{
-       
+      const deleteNote = (id)=>{
+        // TODO: API Call
+       console.log("deleting the note" + id)
+       const newNotes = notes.filter((note)=>{ return note._id!==id})
+       setNotes(newNotes)
       }
 
 
