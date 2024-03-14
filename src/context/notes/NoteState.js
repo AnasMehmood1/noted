@@ -25,9 +25,11 @@ const NoteState = (props) => {
 
   }
 
+
+
   // Add a Note 
   const addNote = async(title, description, tag) => {
-    // TODO: API Call
+  //   // TODO: API Call
 
     const response = await fetch(`${host}/api/notes/addnote`, {
       method: "POST",
@@ -37,22 +39,17 @@ const NoteState = (props) => {
         "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjVlMWYzNzVkYmM2NTE3ZjhkYzgyNTA2In0sImlhdCI6MTcwOTQ4NTA3Mn0.eeWY7x8QAGLz47rbaWZQKGDfwlavQhgDv-HWaik1YpI"
       },
 
-      body: JSON.stringify(title,description,tag),
+       body: JSON.stringify({ title, description, tag }),
     });
    
+     const json = await response.json(); // Assuming your API returns the added note
   
-
-    console.log("Adding a new note")
-    const note = {
-      "_id": "65e4b12fb70039359c876eb35",
-      "user": "65e1f375dbc6517f8dc82506",
-      "title": title,
-      "description": description,
-      "tag": "blog",
-      "date": "2024-03-03T17:19:43.680Z",
-      "__v": 0
+    if(response.status === 200){
+      // Assuming the API returns the created note object
+      setNotes(notes.concat(json));
+    } else {
+      console.error('Failed to add note', json.message);
     }
-    setNotes(notes.concat(note))
   }
 
   //Delete a Note
