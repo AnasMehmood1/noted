@@ -43,13 +43,13 @@ const NoteState = (props) => {
     });
    
      const json = await response.json(); // Assuming your API returns the added note
-  
-    if(response.status === 200){
+   console.log(json)
+    
       // Assuming the API returns the created note object
       setNotes(notes.concat(json));
-    } else {
-      console.error('Failed to add note', json.message);
-    }
+ 
+    
+   
   }
 
   //Delete a Note
