@@ -26,7 +26,6 @@ const Notes = () => {
      ref.current.click()
     console.log("updating note " ,note)
     editNote(note.id,note.etitle,note.edescription,note.etag)
-    //  addNote(note.title,note.description,note.tag)
 }
 
 const onchange = (e) =>{
