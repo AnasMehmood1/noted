@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
-import { redirect, unstable_HistoryRouter } from 'react-router-dom'
 
-const Login = () => {
+import { useNavigate } from 'react-router-dom';
+
+const Login = (props) => {
     
-  const [credentials,setCredentials] = useState({email: "" , password: ""})
-  let history = useHistory()
+  const [credentials,setCredentials] = useState({email: "" , password: ""}) 
+
+
+  let navigate = useNavigate();
   const [password,setPassword] = useState("")
 
     const handleSubmit = async(e) =>{
@@ -21,13 +24,10 @@ const Login = () => {
           });
           const json = await response.json()
           console.log(json)
-          if(json.success){
-            // Save the auth token and redirect
+           // Save the auth token and redirect
            localStorage.setItem('token',json.authtoken)
-          }
-          else{
-            alert("invalid ")
-          }
+           navigate("/");
+         
           
     }
 
