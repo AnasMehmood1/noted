@@ -24,9 +24,15 @@ const Login = (props) => {
           });
           const json = await response.json()
           console.log(json)
-           // Save the auth token and redirect
-           localStorage.setItem('token',json.authtoken)
-           navigate("/");
+          if(json.success){
+            // Save the auth token and redirect
+         localStorage.setItem('token',json.authtoken)
+         navigate("/");
+         props.showAlert("login Successfully","success")
+        }
+        else{
+          props.showAlert("invalid Crediential","danger")
+        }
          
           
     }
@@ -38,7 +44,7 @@ const Login = (props) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='my-4'>
   <div className="mb-3">
     <label htmlFor="email" className="form-label">Email address</label>
     <input type="email" className="form-control" id="email" value={credentials.email}  onChange={onchange} name='email' aria-describedby="emailHelp"/>

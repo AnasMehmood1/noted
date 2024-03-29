@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import NoteContext from '../context/notes/NoteContext'
-const Addnote = () => {
+const Addnote = (props) => {
     const context = useContext(NoteContext)
     const {notes,addNote} = context;
 
@@ -10,6 +10,7 @@ const Addnote = () => {
         e.preventDefault()
          addNote(note.title,note.description,note.tag)
          setNote({title:" ",description:"",tag:""})
+         props.showAlert("Added successfully","success")
     }
 
     const onchange = (e) =>{
@@ -25,7 +26,7 @@ const Addnote = () => {
                         <input type="text" className="form-control" id="title" value={note.title} name='title' aria-describedby="emailHelp" onChange={onchange} />
                        
                     </div>
-                    <div className="mb-3">
+                    <div className="mb-3" >
                         <label htmlFor="description" className="form-label">Description</label>
                         <input type="text" className="form-control" id="description" value={note.description} name='description' onChange={onchange} />
                     </div>
