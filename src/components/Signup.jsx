@@ -40,7 +40,8 @@ const onchange = (e) =>{
 }
   return (
     <>
-     <div className="container my-4">
+     <div className="container mt-5">
+      <h2 className='my-3'>Create an account to use iNoteBook</h2>
      <form onSubmit={handleSubmit}>
   <div className="mb-3">
     <label htmlFor="name" className="form-label">Name</label>
