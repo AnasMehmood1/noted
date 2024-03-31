@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useRef ,useState } from 'react'
-import NoteContext from '../context/notes/NoteContext'
+
 import Noteitem from './Noteitem';
+import Addnote from "./Addnote"
 import { useNavigate } from 'react-router-dom';
-import Addnote from './Addnote';
+import NoteContext from '../../context/notes/NoteContext';
 const Notes = (props) => {
   const context = useContext(NoteContext)
   let navigate = useNavigate();
@@ -43,7 +44,7 @@ const onchange = (e) =>{
 }
   return (
     <>
-      <Addnote  showAlert={props.showAlert}/>
+    <Addnote showAlert={props.showAlert}/>
       <button ref={ref}  type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Launch demo modal
 </button>

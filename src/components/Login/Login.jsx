@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-
+import "./Login.css"
 import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 const Login = (props) => {
     
   const [credentials,setCredentials] = useState({email: "" , password: ""}) 
@@ -43,24 +43,37 @@ const Login = (props) => {
   }
 
   return (
-    <div className='mt-5'>
-      <h2 className='my-3'>Login to continue iNoteBook</h2>
-      <form onSubmit={handleSubmit} className=''>
+    <>
+         <div className="login-container">
+              <div className="inner">
+              <div className="left">
+          <img src="./img.jpg" alt="" />
+         </div>
+         <div className="right"> 
+         <form onSubmit={handleSubmit} className='form'>
         
-  <div className="mb-3 ">
+        <div className="email ">
+        
   
-    <label htmlFor="email" className="form-label">Email address</label>
-    <input type="email" className="form-control" id="email" value={credentials.email}  onChange={onchange} name='email' aria-describedby="emailHelp"/>
-   
-  </div>
-  <div className="mb-3">
-    <label htmlFor="Password" className="form-label">Password</label>
-    <input type="password" className="form-control" value={credentials.password} onChange={onchange} id="Password" name='password'/>
-  </div>
- 
-  <button type="submit" className="btn btn-primary" >Submit</button>
-</form>
-    </div>
+          <input type="email" className="form-control" autoComplete='off'  placeholder='example@gmail.com' id="email" value={credentials.email}  onChange={onchange} name='email' aria-describedby="emailHelp"/>
+         
+        </div>
+        <div className="password">
+          <input type="password" placeholder='password' autoComplete='off' className="form-control" value={credentials.password} onChange={onchange} id="Password" name='password'/>
+        </div>
+       
+        <button type="submit" className="sb-btn" >Submit</button>
+        <div className="inst">
+          <p>        if you don't have account  you need to </p>
+        <span><Link to='/signup' className='lg'>signup</Link></span>
+        </div>
+
+      </form></div>
+              </div>
+         </div>
+    </>
+     
+    
   )
 }
 
