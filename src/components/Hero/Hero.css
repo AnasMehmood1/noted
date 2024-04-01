@@ -1,0 +1,35 @@
+.hero-image-container{
+    width: 100%;
+}
+.arrow{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    display: flex;
+}
+.arrow i{
+    width: 40px;
+    background-color: rgba(0, 0, 0, 0.418);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    margin-left: 10px;
+    font-size: 17px;
+}
+.hero-text{
+    margin-top: 6rem;
+    margin-left: 5rem;
+}
+.hero-text h1{
+    color: white;
+    font-weight: 700;
+}
+.hero-text p{
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+    margin-top: -1rem;
+    font-weight: 500;
+}
