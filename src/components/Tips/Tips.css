@@ -1,0 +1,130 @@
+.tip-main-container{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: -4rem;
+  flex-wrap: wrap;
+}
+.left-tip-container{
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding: 2rem 2rem;
+    box-shadow: 0px 5px 25px -2px rgba(0, 0, 0, 0.08);
+    background-color: white;
+}
+.info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.head ,
+.right-head{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.head i{
+    color: rgba(255, 166, 0, 0.795);
+    font-size: 23px;
+}
+.dot{
+    display: flex;
+    gap: .5rem;
+}
+.dot span{
+    width: 4px ;
+    height: 4px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+.tip-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+.camera{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 5px 25px -2px rgba(0, 0, 0, 0.08);
+    background-color: white;
+    padding: 1rem 1.8rem;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-between;
+}
+.icons i:last-child{
+    width: 25px;
+    height: 25px;
+    background-color: #0A66C2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.icons i:first-child{
+    color: #0A66C2;
+    font-size: 18px;
+}
+.icon i:first-child{
+    color: #0A66C2;
+    font-size: 18px;
+}
+.draw i{
+    color: rgba(255, 166, 0, 0.795);
+}
+.draw h3,
+.plan h3{
+    width: 200px;
+}
+.draw i:last-child{
+    background-color: rgba(255, 166, 0, 0.795);
+    color: white;
+}
+
+.camera h3{
+    margin-bottom: -.5rem;
+}
+.camera p{
+    color: gray;
+}
+.right-tip-container{
+    width: 20%;
+   
+    padding: 0px 2rem;
+    list-style: none;
+    box-shadow: 0px 5px 25px -2px rgba(0, 0, 0, 0.08);
+    background-color: #eaf5ff;
+}
+.right-info{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.right-head i{
+    transform: rotate(30deg);
+}
+.list li span{
+  
+    margin: .5rem 0px;
+    margin-right: .5rem;
+}
+@media(max-width:1200px){
+    .right-tip-container{
+        width: 40%;
+        padding: 2rem;
+    }
+}
+@media(max-width:600px){
+    .right-tip-container{
+        width: 60%;
+        padding: 2rem;
+    }
+}

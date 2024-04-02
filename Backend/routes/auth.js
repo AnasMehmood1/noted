@@ -44,8 +44,10 @@ router.post('/createuser', [
 
 
     // res.json(user)
-    success = true
-    res.json({ success, authtoken })
+    // success = true
+    // res.json({ success, authtoken })
+    // Updated /login route success response to include name
+res.json({ success, authtoken, name: user.name })
 
   } catch (error) {
     console.error(error.message);

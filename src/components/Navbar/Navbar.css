@@ -5,7 +5,8 @@
     background-color: black;
     flex-direction: column;
     color: #ffffff;
-    width: 18%;
+    width: 17%;
+ padding: 0px 1rem;
  padding-bottom: 3rem;
 }
 .first{
@@ -71,14 +72,9 @@
     width: 100%;
     padding: 0rem 0px;
 }
-.logout{
-    width: 100%;
-    padding: 1rem 0px;
-    background-color: #272727;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-top: 2px solid #272727;
+.log{
+
+    /* padding-left: 1rem; */
 }
 
 .lg{
@@ -127,7 +123,7 @@
     border-radius: 4px;
     color: green;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 12px;
 }
 .plane{
     color: rgba(255, 166, 0, 0.795);
@@ -162,7 +158,7 @@
 .nav-item li, .nav-item-sec li {
     position: relative;
     list-style: none;
-    padding: .8rem .4rem;
+    padding: .8rem 0.5rem;
     color: white;
     text-decoration: none;
 }
@@ -194,7 +190,7 @@
     text-decoration: none;
     color: white;
 }
-@media(max-width:600px){
+@media(max-width:800px){
     .header{
         display: none;
     }

@@ -32,6 +32,7 @@ const Navbar = () => {
                        <li> <Link to="/" className='lg'> <i class="fa-solid fa-bolt"></i>Tips <button className='updated'>updated</button></Link></li>
                   <li>      <Link to="/"className='lg'> <i class="fa-solid fa-trash"></i>Trash</Link></li>
                   <li>      <Link to="/"className='lg'> <i class="fa-solid fa-gear"></i>Setting</Link></li>
+                  <li  onClick={handlelogout}>      <Link to="/"className='lg log'><i class="fa-solid fa-right-from-bracket"></i>logout</Link></li>
                        </ul>
                     </div>
                     <div className="plane">

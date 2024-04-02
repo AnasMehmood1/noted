@@ -27,6 +27,7 @@ const Login = (props) => {
           if(json.success){
             // Save the auth token and redirect
          localStorage.setItem('token',json.authtoken)
+         localStorage.setItem('name', json.name); 
          props.showAlert("login Successfully","success")
          navigate('/');
         }
@@ -65,7 +66,7 @@ const Login = (props) => {
         <button type="submit" className="sb-btn" >Submit</button>
         <div className="inst">
           <p>        if you don't have account  you need to </p>
-        <span><Link to='/signup' className='lg'>signup</Link></span>
+        <span><Link to='/signup' className='lg sign'>signup</Link></span>
         </div>
 
       </form></div>
