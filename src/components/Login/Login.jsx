@@ -28,7 +28,7 @@ const Login = (props) => {
             // Save the auth token and redirect
          localStorage.setItem('token',json.authtoken)
          localStorage.setItem('name', json.name); 
-         props.showAlert("login Successfully","success")
+         props.showAlert(json.name,"login Successfully","success")
          navigate('/');
         }
         else{
@@ -48,7 +48,7 @@ const Login = (props) => {
          <div className="login-container">
               <div className="inner">
               <div className="left">
-          <img src="./img.jpg" alt="" />
+          <img src="./hero.jpg" alt="" />
          </div>
          <div className="right"> 
          <form onSubmit={handleSubmit} className='form'>
@@ -66,7 +66,7 @@ const Login = (props) => {
         <button type="submit" className="sb-btn" >Submit</button>
         <div className="inst">
           <p>        if you don't have account  you need to </p>
-        <span><Link to='/signup' className='lg sign'>signup</Link></span>
+        <span><Link to='/signup' className='sign'>signup</Link></span>
         </div>
 
       </form></div>

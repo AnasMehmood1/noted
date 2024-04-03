@@ -5,9 +5,11 @@
     background-color: black;
     flex-direction: column;
     color: #ffffff;
-    width: 17%;
+    width: 15%;
  padding: 0px 1rem;
  padding-bottom: 3rem;
+
+
 }
 .first{
     display: flex;
@@ -21,6 +23,7 @@
 
 .logo{
     width: 100%;
+    position: relative;
 }
 .logo h1{
     font-size: 25px;
@@ -76,7 +79,14 @@
 
     /* padding-left: 1rem; */
 }
-
+.logo h1::before{
+    content: 'Paperless and Easy';
+    position: absolute;
+    font-size: 10px;
+    bottom: 30%;
+    right: 10%;
+    color: gray;
+}
 .lg{
     text-decoration: none;
     color: White;
@@ -190,8 +200,49 @@
     text-decoration: none;
     color: white;
 }
-@media(max-width:800px){
+/* ----------Mobile Navbar ---------------- */
+
+.mobile-navbar{
+    display: none;
+}
+
+
+
+
+
+@media(max-width:850px){
     .header{
         display: none;
+    }
+    .mobile-navbar{
+        position: fixed;
+        z-index: 999;
+        display: block;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        right: 0;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: space-around;
+        gap: 10rem;
+        align-items: center;
+        border-top: 2px solid lightgray;
+        padding: .8rem 0px;
+    }
+    .mob-log{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    .mob-logo h1::before{
+        content: 'Paperless and Easy';
+        position: absolute;
+        font-size: 10px;
+        bottom: 0;
+        margin-left: 3.5rem;
+        top: 70%;
+        color: gray;
     }
 }

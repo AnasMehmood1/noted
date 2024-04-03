@@ -6,16 +6,26 @@ const Navbar = () => {
     let navigate = useNavigate();
     const handlelogout = () => {
         localStorage.removeItem('token')
-        navigate('/login')
+        navigate('/noted')
     }
 
     return (
         <>
+         <div className="mobile-navbar">
+            <div className="mob-logo">
+              <h1>noted</h1>
+            </div>
+            <div onClick={handlelogout} className="mob-log">
+            <i class="fa-solid fa-right-from-bracket"></i>logout
+            </div>
+         </div>
+
+         
             <div className="header">
               
                     <div className="first">
                     <div className="logo">
-                        <Link to="/" className='lg'><h1>iNoteBook</h1></Link>
+                        <Link to="/" className='lg'><h1>Noted</h1></Link>
                         <hr />
                     </div>
                    
@@ -30,7 +40,7 @@ const Navbar = () => {
                        </ul>
                        <ul className="nav-item-sec">
                        <li> <Link to="/" className='lg'> <i class="fa-solid fa-bolt"></i>Tips <button className='updated'>updated</button></Link></li>
-                  <li>      <Link to="/"className='lg'> <i class="fa-solid fa-trash"></i>Trash</Link></li>
+                  <li>      <Link className='lg'> <i class="fa-solid fa-trash"></i>Trash</Link></li>
                   <li>      <Link to="/"className='lg'> <i class="fa-solid fa-gear"></i>Setting</Link></li>
                   <li  onClick={handlelogout}>      <Link to="/"className='lg log'><i class="fa-solid fa-right-from-bracket"></i>logout</Link></li>
                        </ul>

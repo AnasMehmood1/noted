@@ -12,6 +12,7 @@ import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
+import Firstpage from './components/Firstpage/Firstpage';
 function App() {
   const [alert ,setAlert] = useState(null);
   const showAlert = ( message , type)=>{
@@ -33,6 +34,7 @@ function App() {
 
    <Routes>
             <Route exact path='/' element={<Home  showAlert={showAlert}/>} />
+            <Route exact path='/noted' element={<Firstpage/>} />
             <Route exact path='/login' element={<Login showAlert={showAlert}/>} />
             <Route exact path='/signup' element={<Signup showAlert={showAlert}/>} />
           </Routes>

@@ -33,7 +33,8 @@ const Hero = () => {
           <i className="fa-solid fa-angle-right"></i>
         </div>
         <div className="hero-text">
-          <h1>{`${getGreeting()}, ${name}`}</h1>
+          <h1>{`${getGreeting()}, ${name}`}.</h1>
+          
           <div className="date">
             <p>{getFormattedDate()}</p>
           </div>

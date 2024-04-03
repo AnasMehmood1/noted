@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const mongourl = "mongodb://localhost:27017/Practice"
+const mongourl = "mongodb://localhost:27017/noted"
 
 const connectToMongo = ()=>{
     mongoose.connect(mongourl,()=>{

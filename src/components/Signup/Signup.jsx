@@ -1,38 +1,35 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-
+import "./Signup.css"
+import { Link } from 'react-router-dom';
 const Signup = (props) => {
   const [credentials,setCredentials] = useState( {name:"" ,email: "" , password: "",cpassword: ""}) 
   
   let navigate = useNavigate();
 
-  const handleSubmit = async(e) =>{
-    e.preventDefault()
-   const {name,email,password}= credentials;
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    const { name, email, password } = credentials;
     const response = await fetch("http://localhost:5000/api/auth/createuser", {
-
-        method: "POST",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, password }),
+    });
+    const json = await response.json();
+    console.log(json);
   
-        headers: {
-          "Content-Type": "application/json",
-         
-        },
-        body: JSON.stringify({name,email,password}),
-      });
-      const json = await response.json()
-      console.log(json)
+    if (json.success) {
+      // Save the auth token and redirect
+      localStorage.setItem('token', json.authtoken);
+      navigate("/login");
+      props.showAlert("Signup Successfully", "success");
+    } else {
+      props.showAlert(json.error || "Signup failed", "danger");
+    }
+  }
   
-      if(json.success){
-          // Save the auth token and redirect
-       localStorage.setItem('token',json.authtoken)
-       navigate("/login");
-       props.showAlert("Signup Successfully","success")
-      }
-      else{
-        props.showAlert("invalid Crediential","danger")
-      }
-      
-}
 
 
 const onchange = (e) =>{
@@ -44,7 +41,7 @@ const onchange = (e) =>{
             <div className="login-container">
               <div className="inner">
                 <div className="left">
-                <img src="./img.jpg" alt="" />
+                <img src="./hero.jpg" alt="" />
                 </div>
                 <div className="right">
                 <form onSubmit={handleSubmit} className='form'>
@@ -66,7 +63,10 @@ const onchange = (e) =>{
   </div>
  
   <button type="submit" className="sb-btn">Submit</button>
-
+  <div className="inst">
+          <p>        if you already have account  you need to </p>
+        <span><Link to='/login' className='sign'>Login</Link></span>
+        </div>
 </form>
                 </div>
               </div>
