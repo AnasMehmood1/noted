@@ -1,36 +1,35 @@
-/* Existing styles for .alert, including the animation */
+
 .alert {
   background-color: #152238;
   color: white;
-  position: fixed; /* Change from absolute to fixed */
-  height: 40px;
-  width: 250px;
+  position: fixed; 
+  padding: 1rem 3rem;
   top: 5%;
-  right: 5%; /* Change the starting position to right: 5% */
+  right: 5%; 
   font-size: 16px;
   border-radius: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   animation: slideIn 0.5s forwards;
-  overflow: hidden; /* Hide any overflow */
+  overflow: hidden; 
+  z-index: 999;
 }
 
 @keyframes slideIn {
   from {
-    right: -100%; /* Start from -100% */
+    right: -100%; 
   }
   to {
-    right: 5%; /* End at 5% */
+    right: 5%; 
   }
 }
 
-/* New styles for success and danger types */
 .alert-success {
-    background-color: #28a745; /* Green */
+    background-color: #28a745;
   }
   
   .alert-danger {
-    background-color: #dc3545; /* Red */
+    background-color: #dc3545; 
   }
   

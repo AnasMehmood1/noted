@@ -22,9 +22,9 @@ const Notes = (props) => {
 
   const updateNote = (currentNote) => {
 
-    // ref.current.click()
+   
     setNote({id: currentNote._id ,etitle: currentNote.title , edescription: currentNote.description , etag: currentNote.tag})
-    setIsModalOpen(true); // Open the modal
+    setIsModalOpen(true); 
   }
 
   const ref = useRef(null);
@@ -35,11 +35,11 @@ const Notes = (props) => {
 
   const handleclick = (e)=>{
     e.preventDefault()
-    //  ref.current.click()
+   
     console.log("updating note " ,note)
     editNote(note.id,note.etitle,note.edescription,note.etag)
     props.showAlert("updated successfully","success")
-    setIsModalOpen(false); // Close the modal
+    setIsModalOpen(false);
 }
 
 const onchange = (e) =>{

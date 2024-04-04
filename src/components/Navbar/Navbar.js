@@ -2,15 +2,19 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import "./Navbar.css"
-const Navbar = () => {
+const Navbar = ({props}) => {
     let navigate = useNavigate();
     const handlelogout = () => {
+      
         localStorage.removeItem('token')
+     
         navigate('/noted')
+
     }
 
     return (
         <>
+        {/* for Mobile */}
          <div className="mobile-navbar">
             <div className="mob-logo">
               <h1>noted</h1>
@@ -20,7 +24,7 @@ const Navbar = () => {
             </div>
          </div>
 
-         
+         {/* for Desktop  */}
             <div className="header">
               
                     <div className="first">
@@ -52,12 +56,6 @@ const Navbar = () => {
                         <p><i class="fa-solid fa-clipboard-question"></i> Need a little help ?</p>
                     </div>
 
-                    {/* <div className="buttons">
-                    {!localStorage.getItem('token') ? <form className="btn">
-                        <Link className="login" to="/login" role="button">Login</Link>
-                        <Link className="sign" to="/signup" role="button">Signup</Link>
-                    </form> : <button className="logout" to="/signup" role="button" onClick={handlelogout}>Logout</button>}
-                </div> */}
 
                 </div>
 

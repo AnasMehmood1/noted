@@ -3,15 +3,16 @@ import "./Hero.css";
 import Tips from '../Tips/Tips';
 
 const Hero = () => {
-  // Retrieve the user's name from localStorage
-  const name = localStorage.getItem('name') || 'User'; // Fallback to 'User' if not found
+
+  const name = localStorage.getItem('name') || 'User'; 
 
   // Function to get the current greeting based on the time of day
   const getGreeting = () => {
     const hour = new Date().getHours();
-    if (hour < 12) return 'Good Morning';
-    if (hour < 18) return 'Good Afternoon';
-    return 'Good Evening';
+    if (hour < 10) return 'Good Morning';
+    if (hour < 18) return 'Good Afternoon'; 
+    if (hour < 22) return 'Good Evening'; 
+    return 'Good Night';
   };
 
   // Function to get formatted date

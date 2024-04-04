@@ -10,33 +10,39 @@ const Login = (props) => {
   let navigate = useNavigate();
   const [password,setPassword] = useState("")
 
-    const handleSubmit = async(e) =>{
-        e.preventDefault()
+   // Login Component
+const handleSubmit = async(e) =>{
+  e.preventDefault();
+  const response = await fetch("http://192.168.100.9:5000/api/auth/login", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: credentials.email, password: credentials.password }),
+  });
+  const json = await response.json();
+  console.log(json);
+      // Save the auth token and redirect
+      try {
+  if(json.success){
+
+        localStorage.setItem('token', json.authtoken);
+        localStorage.setItem('name', json.name); 
         
-        const response = await fetch("http://192.168.100.9:5000/api/auth/login", {
-            method: "POST",
+      props.showAlert("Login Successfully", "success");
+      navigate('/');
+
+  }
+  else{
+    props.showAlert("Invalid Credentials", "danger");
+}
+      } catch (error) {
+        console.error('Error storing token in localStorage:', error);
+      }
       
-            headers: {
-              "Content-Type": "application/json",
-             
-            },
-            body: JSON.stringify({email: credentials.email,password: credentials.password}),
-          });
-          const json = await response.json()
-          console.log(json)
-          if(json.success){
-            // Save the auth token and redirect
-         localStorage.setItem('token',json.authtoken)
-         localStorage.setItem('name', json.name); 
-         props.showAlert(json.name,"login Successfully","success")
-         navigate('/');
-        }
-        else{
-          props.showAlert("invalid Crediential","danger")
-        }
-         
-          
-    }
+   
+ 
+}
 
 
     const onchange = (e) =>{

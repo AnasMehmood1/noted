@@ -7,29 +7,31 @@ const Signup = (props) => {
   
   let navigate = useNavigate();
 
-  const handleSubmit = async(e) => {
-    e.preventDefault();
-    const { name, email, password } = credentials;
-    const response = await fetch("http://localhost:5000/api/auth/createuser", {
+// Signup Component
+const handleSubmit = async(e) =>{
+  e.preventDefault()
+  const { name, email, password } = credentials;
+  const response = await fetch("http://192.168.100.9:5000/api/auth/createuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ name, email, password }),
-    });
-    const json = await response.json();
-    console.log(json);
-  
-    if (json.success) {
+  });
+  const json = await response.json()
+  console.log(json)
+  if(json.success){
       // Save the auth token and redirect
       localStorage.setItem('token', json.authtoken);
+      console.log('Token stored in localStorage:', localStorage.getItem('token'));
       navigate("/login");
       props.showAlert("Signup Successfully", "success");
-    } else {
-      props.showAlert(json.error || "Signup failed", "danger");
-    }
   }
-  
+  else{
+      props.showAlert("Invalid Credentials", "danger");
+  }
+}
+
 
 
 const onchange = (e) =>{
@@ -72,10 +74,10 @@ const onchange = (e) =>{
               </div>
             </div>
       
-    
   
     </>
   )
 }
 
 export default Signup
+
