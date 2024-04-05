@@ -4,14 +4,14 @@ import Tips from '../Tips/Tips';
 
 const Hero = () => {
 
-  const name = localStorage.getItem('name') || 'User'; 
+  const name = localStorage.getItem('name') || 'User';
 
   // Function to get the current greeting based on the time of day
   const getGreeting = () => {
     const hour = new Date().getHours();
-    if (hour < 10) return 'Good Morning';
-    if (hour < 18) return 'Good Afternoon'; 
-    if (hour < 22) return 'Good Evening'; 
+    if (hour >= 5 && hour < 10) return 'Good Morning';
+    if (hour >= 10 && hour < 15) return 'Good Afternoon';
+    if (hour >= 15 && hour < 18) return 'Good Evening';
     return 'Good Night';
   };
 
@@ -47,3 +47,5 @@ const Hero = () => {
 }
 
 export default Hero;
+
+
