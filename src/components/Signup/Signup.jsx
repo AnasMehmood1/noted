@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom'; 
 import "./Signup.css"
 
 const Signup = (props) => {
@@ -27,7 +27,7 @@ const Signup = (props) => {
           
       
         navigate('/login');
-  props.showAlert("Login Successfully", "success");
+  props.showAlert("Signup Successfully", "success");
     }
     else{
       props.showAlert("Invalid Credentials", "danger");
