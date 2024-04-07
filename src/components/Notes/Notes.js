@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef ,useState } from 'react'
+import React, { useContext, useEffect,useState } from 'react'
 
 import Noteitem from './Noteitem';
 import Addnote from "./Addnote"
@@ -27,8 +27,6 @@ const Notes = (props) => {
     setIsModalOpen(true); 
   }
 
-  const ref = useRef(null);
-  const close = useRef(null);
 
   const [note, setNote] = useState({ id:"",etitle:" ",edescription:"",etag:""})
   const [isModalOpen, setIsModalOpen] = useState(false);

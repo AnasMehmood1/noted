@@ -226,6 +226,7 @@ font-family: 'Poppins', sans-serif; */
     flex-direction: column;
     padding: 2rem 2rem;
     padding-bottom: 4em;
+   
   }
   .model-form{
     display: flex;
@@ -233,13 +234,16 @@ font-family: 'Poppins', sans-serif; */
     gap: 1rem;
   }
   .model-form input{
-border-radius: 6px;
-    height: 20px;
+    border-radius: 6px;
     padding: 10px;
     border: 2px solid lightgray;
     font-size: 16px;
     font-family: 'Nunito Sans', sans-serif;
     outline: none;
+    word-wrap: break-word;
+    overflow: hidden; 
+    resize: vertical; /* allow vertical resizing */
+    min-height: 40px; /* set a minimum height */
   }
   .update-btn{
     padding: .8rem 2rem;
