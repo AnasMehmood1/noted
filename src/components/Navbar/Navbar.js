@@ -22,6 +22,7 @@ const Navbar = ({props}) => {
             <div onClick={handlelogout} className="mob-log">
             <i class="fa-solid fa-right-from-bracket"></i>logout
             </div>
+            
          </div>
 
          {/* for Desktop  */}
@@ -29,10 +30,12 @@ const Navbar = ({props}) => {
               
                     <div className="first">
                     <div className="logo">
-                        <Link to="/" className='lg'><h1>Noted</h1></Link>
+                        <Link to="/" className='lg'><h1>noted</h1></Link>
                         <hr />
                     </div>
-                   
+                    
+                    <div className='box'></div>
+                    <div className='box1'></div>
                        
                        <div className="search">
                        <i class="fa-solid fa-magnifying-glass"></i>
