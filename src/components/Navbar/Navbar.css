@@ -35,6 +35,7 @@
   padding: .4rem 1.4rem;
   border-radius: 4px;
   align-items: center;
+ 
 }
 .search input{
     height: 18px;
@@ -245,7 +246,7 @@
         gap: 10rem;
         align-items: center;
         border-top: 2px solid lightgray;
-        /* color: white; */
+     
         color: black;
         padding: .8rem 0px;
     }

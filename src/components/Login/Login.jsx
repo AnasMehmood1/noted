@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Login = (props) => {
     
   const [credentials,setCredentials] = useState({email: "" , password: ""}) 
-
+  const name = localStorage.getItem('name') || 'User';
 
   let navigate = useNavigate();
   const [password,setPassword] = useState("")
@@ -28,7 +28,7 @@ const handleSubmit = async(e) =>{
         localStorage.setItem('token', json.authtoken);
         localStorage.setItem('name', json.name); 
         
-      props.showAlert("Login Successfully", "success");
+      props.showAlert( "Login Successfully", "success");
       navigate('/');
 
   }

@@ -10,7 +10,7 @@ const Home = (props) => {
   return (
     <>
     <div className="flex">
-    <Navbar/>
+    <Navbar showAlert={showAlert}/>
    <div className="home">
    <Hero/>
    <Notes  showAlert={showAlert}/>
