@@ -243,7 +243,7 @@ font-family: 'Poppins', sans-serif; */
     word-wrap: break-word;
     overflow: hidden; 
     resize: vertical; /* allow vertical resizing */
-    min-height: 40px; /* set a minimum height */
+    min-height: 30px; /* set a minimum height */
   }
   .update-btn{
     padding: .8rem 2rem;

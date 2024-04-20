@@ -4,8 +4,9 @@ import { Route, Routes } from 'react-router-dom'
 
 import About from './components/About';
 import NoteState from './context/notes/NoteState';
-import Alert from './components/Alert';
 
+import { ToastContainer, toast } from 'react-toastify'; // Import ToastContainer and toast
+import 'react-toastify/dist/ReactToastify.css'; // Import CSS for styling
 
 import { useState } from 'react';
 import Login from './components/Login/Login';
@@ -14,31 +15,20 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Firstpage from './components/Firstpage/Firstpage';
 function App() {
-  const [alert ,setAlert] = useState(null);
-  const showAlert = ( message , type)=>{
-   setAlert(
-     {
-       msg : message,
-     typ : type
-     }
-   )
-   setTimeout(() => {
-     setAlert(null)
-   }, 1500);
-  }
+
   return (
     < >
 
       <NoteState>
-      <Alert alert={alert}/>
+      
 
    <Routes>
-            <Route exact path='/' element={<Home  showAlert={showAlert}/>} />
+            <Route exact path='/' element={<Home  />} />
             <Route exact path='/noted' element={<Firstpage/>} />
-            <Route exact path='/login' element={<Login showAlert={showAlert}/>} />
-            <Route exact path='/signup' element={<Signup showAlert={showAlert}/>} />
+            <Route exact path='/login' element={<Login />} />
+            <Route exact path='/signup' element={<Signup />} />
           </Routes>
-
+          <ToastContainer />
     
 
       </NoteState>

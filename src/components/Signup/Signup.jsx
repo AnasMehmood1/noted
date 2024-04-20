@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'; 
+import { toast } from 'react-toastify'; //
 import "./Signup.css"
 
 const Signup = (props) => {
@@ -10,7 +11,7 @@ const Signup = (props) => {
   const handleSubmit = async(e) =>{
     e.preventDefault();
     const {name,email,password} = credentials;
-    const response = await fetch("http://localhost:5000/api/auth/createuser", {
+    const response = await fetch("http://192.168.100.9:5000/api/auth/createuser", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -25,12 +26,12 @@ const Signup = (props) => {
           localStorage.setItem('token', json.authtoken);
           localStorage.setItem('name', json.name); 
           
-      
-        navigate('/login');
-  props.showAlert("Signup Successfully", "success");
+          toast.success("Signup Successfully"); // Display success toast
+        navigate('/');
+  
     }
     else{
-      props.showAlert("Invalid Credentials", "danger");
+      toast.error("Please enter valid credential"); 
   }
         
         

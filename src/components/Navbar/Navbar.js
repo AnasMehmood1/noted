@@ -2,13 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import "./Navbar.css"
-const Navbar = ({showAlert}) => {
+import { toast } from 'react-toastify'; //
+const Navbar = () => {
   
     let navigate = useNavigate();
     const handlelogout = () => {
       
         localStorage.removeItem('token')
-        showAlert( "Logout Successfully", "success");
+        toast.success("Logout Successfully"); // Display success toast
         navigate('/noted')
 
     }

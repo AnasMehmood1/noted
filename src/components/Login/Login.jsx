@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "./Login.css"
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify'; //
 const Login = (props) => {
     
   const [credentials,setCredentials] = useState({email: "" , password: ""}) 
@@ -13,7 +14,7 @@ const Login = (props) => {
    // Login Component
 const handleSubmit = async(e) =>{
   e.preventDefault();
-  const response = await fetch("http://localhost:5000/api/auth/login", {
+  const response = await fetch("http://192.168.100.9:5000/api/auth/login", {
       method: "POST",
       headers: {
           "Content-Type": "application/json",
@@ -28,12 +29,12 @@ const handleSubmit = async(e) =>{
         localStorage.setItem('token', json.authtoken);
         localStorage.setItem('name', json.name); 
         
-      props.showAlert( "Login Successfully", "success");
+        toast.success("Login Successfully"); // Display success toast
       navigate('/');
 
   }
   else{
-    props.showAlert("Invalid Credentials", "danger");
+    toast.error("Please enter valid credential"); // Display success toast
 }
       } catch (error) {
         console.error('Error storing token in localStorage:', error);

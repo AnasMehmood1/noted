@@ -1,17 +1,20 @@
 import React, { useContext, useState } from 'react'
 import NoteContext from '../../context/notes/NoteContext';
+import { useNavigate } from 'react-router-dom';
 import "./Note.css"
+import { toast } from 'react-toastify'; //
 const Addnote = (props) => {
     const context = useContext(NoteContext)
     const { notes, addNote } = context;
-
+    let navigate = useNavigate();
     const [note, setNote] = useState({ title: " ", description: "", tag: "" })
 
     const handleclick = (e) => {
         e.preventDefault()
+        
         addNote(note.title, note.description, note.tag)
         setNote({ title: " ", description: "", tag: "" })
-        props.showAlert("Added successfully", "success")
+        toast.success("addnote Successfully"); // Display success toast
     }
 
     const onchange = (e) => {

@@ -3,6 +3,7 @@ import React, { useContext, useEffect,useState } from 'react'
 import Noteitem from './Noteitem';
 import Addnote from "./Addnote"
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify'; //
 import NoteContext from '../../context/notes/NoteContext';
 const Notes = (props) => {
   const context = useContext(NoteContext)
@@ -34,9 +35,9 @@ const Notes = (props) => {
   const handleclick = (e)=>{
     e.preventDefault()
    
-    console.log("updating note " ,note)
+    // console.log("updating note " ,note)
     editNote(note.id,note.etitle,note.edescription,note.etag)
-    props.showAlert("updated successfully","success")
+    toast.success("updated Successfully"); // Display success toast
     setIsModalOpen(false);
 }
 
