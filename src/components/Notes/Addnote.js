@@ -43,7 +43,7 @@ const Addnote = (props) => {
 
                         <textarea type="text"  placeholder='Tag your note (e.g., Work, Personal)..' id="tag" value={note.tag} name='tag' onChange={onchange}cols="30" rows="10"></textarea>
                     </div>
-                    <button disabled={note.title.length<2|| note.description.length<2 || note.tag.length<2} type="submit" className="add-note-btn" onClick={handleclick}>ADD NOTE</button>
+                    <button disabled={note.title.length<2|| note.description.length<2 || note.tag.length<2} type="submit" className="add-note-btn" onClick={handleclick}> <i class="fa-solid fa-plus"></i> ADD NOTE</button>
                 </form>
             </div>
 
