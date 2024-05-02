@@ -14,7 +14,7 @@ const Addnote = (props) => {
         
         addNote(note.title, note.description, note.tag)
         setNote({ title: " ", description: "", tag: "" })
-        toast.success("addnote Successfully"); // Display success toast
+        toast.success("note added Successfully"); // Display success toast
     }
 
     const onchange = (e) => {
@@ -43,7 +43,7 @@ const Addnote = (props) => {
 
                         <textarea type="text"  placeholder='Tag your note (e.g., Work, Personal)..' id="tag" value={note.tag} name='tag' onChange={onchange}cols="30" rows="10"></textarea>
                     </div>
-                    <button disabled={note.title.length<2|| note.description.length<2 || note.tag.length<2} type="submit" className="add-note-btn" onClick={handleclick}>ADD NOTE</button>
+                    <button disabled={note.title.length<2|| note.description.length<2 || note.tag.length<2} type="submit" className="add-note-btn" onClick={handleclick}> <i class="fa-solid fa-plus"></i> </button>
                 </form>
             </div>
 
