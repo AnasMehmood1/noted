@@ -24,7 +24,7 @@ const Tips = () => {
                 <i class="fa-solid fa-check"></i>
                 </div>
                 <h3>Scan with your camera</h3>
-                <p>Lorem ipsum dolor sit.</p>
+                <p>Turn your old notes into digital one .</p>
             </div>
             <div className="draw camera">
                 <div className="draw icons">
@@ -32,14 +32,14 @@ const Tips = () => {
                 <i class="fa-solid fa-check"></i>
                 </div>
                 <h3>Draw your notes</h3>
-                <p>Lorem ipsum dolor sit.</p>
+                <p>Everything is cloud be happend.</p>
             </div>
             <div className="plan camera">
                 <div className="icon">
                 <i class="fa-solid fa-book-open"></i>
                 </div>
                 <h3>Plane your projects</h3>
-                <p>Lorem ipsum dolor sit.</p>
+                <p>Easier to plane your project.</p>
             </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom'
 
-import About from './components/About';
+
 import NoteState from './context/notes/NoteState';
 
 import { ToastContainer, toast } from 'react-toastify'; // Import ToastContainer and toast

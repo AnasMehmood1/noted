@@ -42,11 +42,6 @@ router.post('/createuser', [
     }
     const authtoken = jwt.sign(data, JWT_SECRET);
 
-
-    // res.json(user)
-    // success = true
-    // res.json({ success, authtoken })
-    // Updated /login route success response to include name
      success = true
 res.json({ success, authtoken, name: user.name })
 

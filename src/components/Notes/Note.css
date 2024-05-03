@@ -93,8 +93,8 @@
     border-radius: 4px;
 }
 .add-note-btn{
-    padding: 1rem 1.5rem;
-    border-radius: 2px;
+    padding: .8rem 1.5rem;
+    border-radius: 4px;
     border: none;
     background-color: rgb(61, 150, 61);
     color: white;
@@ -104,7 +104,8 @@
     right: 10%;
 }
 .add-note-btn i{
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 /* font-family: 'Nunito', sans-serif;

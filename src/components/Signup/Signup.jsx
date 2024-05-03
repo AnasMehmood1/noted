@@ -48,32 +48,55 @@ const Signup = (props) => {
 
   return (
     <>
-      <div className="login-container">
-        <div className="inner">
-          <div className="left">
-            <img src="./hero.jpg" alt="" />
+      <div className="login-main-container">
+        <div className="login-left-side"style={{
+            backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(./login.png)',
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            // backgroundPositionY:"40px",
+            height: '85vh'
+          }} >
+        
+          <div className="text">
+              <p>This is absolute way to make your notes easier and save the earth as well.  Anything will be better</p>
+            </div>
+            
+            <div className="author-container">
+            <div className="author">
+             <p className="name">Anas Mehmood</p>
+             <p className="list">MERN Stack Developer</p>
+             </div>
+             <div className="arrow">
+          <i className="fa-solid fa-angle-left"></i>
+          <i className="fa-solid fa-angle-right"></i>
+        </div>
+            </div>
+          
+        </div>
+        <div className="login-right-side">
+          <div className="heading">
+            <h2 className='create'>Create an account</h2>
+            <p>Let's get started with your life time free trial.</p>
           </div>
-          <div className="right">
-            <form  className='form' onSubmit={handleSubmit}>
-              <div className="name">
-                <input type="text" className="form-control" autoComplete='off' name='name' placeholder='Name' onChange={onChange} id="name" aria-describedby="emailHelp" />
-              </div>
-              <div className="email">
-                <input type="email" className="form-control" autoComplete='off' placeholder='example@gmail.com' name='email' onChange={onChange} id="email" aria-describedby="emailHelp" />
-              </div>
-              <div className="password">
-                <input type="password" className="form-control" autoComplete='off' placeholder='password' name='password' onChange={onChange} id="password" />
-              </div>
-              <div className="confirm">
-                <input type="password" className="form-control" autoComplete='off' placeholder='confirm password' name='cpassword' onChange={onChange} id="cpassword" />
-              </div>
-              <button type="submit" className="sb-btn">Submit</button>
-              <div className="inst">
-                <p>If you already have an account, you need to</p>
-                <span><Link to='/login' className='sign'>Login</Link></span>
-              </div>
-            </form>
-          </div>
+
+          <form onSubmit={handleSubmit} className='form'>
+            <div className="inputs ">
+            <input type="text" className="form-control" autoComplete='off' name='name' placeholder='Name' onChange={onChange} id="name" aria-describedby="emailHelp" />
+              <input type="email" className="form-control" autoComplete='off' placeholder='Email' id="email" value={credentials.email} onChange={onchange} name='email' aria-describedby="emailHelp" />
+              <input type="password" placeholder='password' autoComplete='off' className="form-control" value={credentials.password} onChange={onchange} id="Password" name='password' />
+            </div>
+            
+         
+          
+            <button type="submit" className="sb-btn" >Create account</button>
+            <div className="inst">
+              <p>If you already have an account, you need to </p>
+              <span><Link to='/login' className='sign'>login</Link></span>
+            </div>
+
+          </form>
+
         </div>
       </div>
     </>
