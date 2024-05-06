@@ -9,7 +9,7 @@ const port = 5000
 
 app.use(cors(
   {
-    origin:["https://notedd-three.vercel.app"],
+    origin:["https://notedd-app.vercel.app"],
     methods:["POST","GET"],
     credentials:true
   }
