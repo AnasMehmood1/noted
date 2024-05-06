@@ -42,7 +42,24 @@
     font-size: 23px;
 }
 
-
+.circle-arrow{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    display: flex;
+}
+.circle-arrow i{
+    width: 40px;
+   background-color: transparent;
+   border: 1px solid white;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    margin-left: 10px;
+    font-size: 17px;
+}
 
 .login-right-side{
     width: 23%;

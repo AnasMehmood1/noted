@@ -1,52 +1,49 @@
 import React, { useState } from 'react'
-import "./Login.css"
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; 
 import { toast } from 'react-toastify'; //
-const Login = (props) => {
+import "./Signup.css"
 
-  const [credentials, setCredentials] = useState({ email: "", password: "" })
-  const name = localStorage.getItem('name') || 'User';
+const Signup = (props) => {
+  const [credentials, setCredentials] = useState({ name: "", email: "", password: "", cpassword: "" })
 
   let navigate = useNavigate();
-  const [password, setPassword] = useState("")
 
-  // Login Component
-  const handleSubmit = async (e) => {
+  const handleSubmit = async(e) =>{
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email: credentials.email, password: credentials.password }),
+    const {name,email,password} = credentials;
+    const response = await fetch("http://localhost:5000/api/auth/createuser", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name,email,password }),
     });
     const json = await response.json();
-    // Save the auth token and redirect
-    try {
-      if (json.success) {
-
-        localStorage.setItem('token', json.authtoken);
-        localStorage.setItem('name', json.name);
-
-        toast.success("Login Successfully"); // Display success toast
+        // Save the auth token and redirect
+       
+    if(json.success){
+  
+          localStorage.setItem('token', json.authtoken);
+          localStorage.setItem('name', json.name); 
+          
+          toast.success("Signup Successfully"); // Display success toast
         navigate('/');
-
-      }
-      else {
-        toast.error("Please enter valid credential"); // Display success toast
-      }
-    } catch (error) {
-      console.error('Error storing token in localStorage:', error);
+  
     }
-
-
-
+    else{
+      toast.error("Please enter valid credential"); 
   }
+        
+        
+     
+   
+  }
+  
+  
+  
 
-
-  const onchange = (e) => {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value })
+  const onChange = (e) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
   }
 
   return (
@@ -79,21 +76,23 @@ const Login = (props) => {
         </div>
         <div className="login-right-side">
           <div className="heading">
-            <h2>Welcome Back! Please Log In</h2>
+            <h2 className='create'>Create an account</h2>
+            <p>Let's get started with your life time free trial.</p>
           </div>
 
           <form onSubmit={handleSubmit} className='form'>
             <div className="inputs ">
+            <input type="text" className="form-control" autoComplete='off' name='name' placeholder='Name' onChange={onChange} id="name" aria-describedby="emailHelp" />
               <input type="email" className="form-control" autoComplete='off' placeholder='Email' id="email" value={credentials.email} onChange={onchange} name='email' aria-describedby="emailHelp" />
-              <input type="password" placeholder='password' autoComplete='off' className="form-control" value={credentials.password} onChange={onchange} id="Password" name='password' />
+              <input type="password" placeholder='Password' autoComplete='off' className="form-control" value={credentials.password} onChange={onchange} id="Password" name='password' />
             </div>
             
          
           
-            <button type="submit" className="sb-btn" >Submit</button>
+            <button type="submit" className="sb-btn" >Create account</button>
             <div className="inst">
-              <p>if you don't have account  you need to </p>
-              <span><Link to='/signup' className='sign'>signup</Link></span>
+              <p>If you already have an account, you need to </p>
+              <span><Link to='/login' className='sign'>login</Link></span>
             </div>
 
           </form>
@@ -101,9 +100,7 @@ const Login = (props) => {
         </div>
       </div>
     </>
-
-
   )
 }
 
-export default Login
+export default Signup
