@@ -59,7 +59,7 @@ const Signup = (props) => {
           }} >
         
           <div className="text">
-              <p>This is absolute way to make your notes easier and save the earth as well.  Anything will be better</p>
+          <p><i class="fa-solid fa-quote-left"></i> This is absolute way to make your notes easier and save the earth as well.  Anything will be better <i class="fa-solid fa-quote-right"></i></p>
             </div>
             
             <div className="author-container">
