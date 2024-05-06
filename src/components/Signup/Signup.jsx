@@ -83,8 +83,10 @@ const Signup = (props) => {
           <form onSubmit={handleSubmit} className='form'>
             <div className="inputs ">
             <input type="text" className="form-control" autoComplete='off' name='name' placeholder='Name' onChange={onChange} id="name" aria-describedby="emailHelp" />
-              <input type="email" className="form-control" autoComplete='off' placeholder='Email' id="email" value={credentials.email} onChange={onchange} name='email' aria-describedby="emailHelp" />
-              <input type="password" placeholder='Password' autoComplete='off' className="form-control" value={credentials.password} onChange={onchange} id="Password" name='password' />
+
+              <input type="email" className="form-control" autoComplete='off' placeholder='Email' id="email" value={credentials.email} onChange={onChange} name='email' aria-describedby="emailHelp" />
+
+              <input type="password" placeholder='Password' autoComplete='off' className="form-control" value={credentials.password} onChange={onChange} id="Password" name='password' />
             </div>
             
          
