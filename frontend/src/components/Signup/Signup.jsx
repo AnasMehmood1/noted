@@ -11,7 +11,7 @@ const Signup = (props) => {
   const handleSubmit = async(e) =>{
     e.preventDefault();
     const {name,email,password} = credentials;
-    const response = await fetch("https://noted-zeta-six.vercel.app/api/auth/createuser", {
+    const response = await fetch("http://192.168.100.9:5000/api/auth/createuser", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -67,7 +67,7 @@ const Signup = (props) => {
              <p className="name">Anas Mehmood</p>
              <p className="list">MERN Stack Developer</p>
              </div>
-             <div className="arrow">
+             <div className="circle-arrow">
           <i className="fa-solid fa-angle-left"></i>
           <i className="fa-solid fa-angle-right"></i>
         </div>
