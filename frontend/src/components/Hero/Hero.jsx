@@ -15,7 +15,7 @@ const Hero = () => {
     return 'Good Night';
   };
 
-  // Function to get formatted date
+ 
   const getFormattedDate = () => {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     return new Date().toLocaleDateString('en-US', options);

@@ -19,14 +19,13 @@ const Signup = (props) => {
         body: JSON.stringify({ name,email,password }),
     });
     const json = await response.json();
-        // Save the auth token and redirect
        
     if(json.success){
   
           localStorage.setItem('token', json.authtoken);
           localStorage.setItem('name', json.name); 
           
-          toast.success("Signup Successfully"); // Display success toast
+          toast.success("Signup Successfully"); 
         navigate('/');
   
     }
@@ -93,8 +92,8 @@ const Signup = (props) => {
           
             <button type="submit" className="sb-btn" >Create account</button>
             <div className="inst">
-              <p>If you already have an account, you need to </p>
-              <span><Link to='/login' className='sign'>login</Link></span>
+              <p>If you already have an account, you need to ? </p>
+              <span><Link to='/login' className='sign'>Log in</Link></span>
             </div>
 
           </form>
