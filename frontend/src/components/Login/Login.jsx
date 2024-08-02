@@ -14,7 +14,7 @@ const Login = (props) => {
   // Login Component
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://192.168.100.9:5000/api/auth/login", {
+    const response = await fetch("https://noted-yzox.vercel.app/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

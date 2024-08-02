@@ -29,7 +29,7 @@ router.post('/createuser', [
     const salt = await bcrypt.genSalt(10);
     const secPass = await bcrypt.hash(req.body.password, salt);
 
-    // Create a new user
+    // Create a new user 
     user = await User.create({
       name: req.body.name,
       password: secPass,
@@ -101,7 +101,7 @@ router.post('/getuser', fetchuser,  async (req, res) => {
 
   try {
    const userId = req.user.id;
-    const user = await User.findById(userId).select("password")
+    const user = await User.findById(userId).select("-password")
     res.send(user)
   } catch (error) {
     console.error(error.message);

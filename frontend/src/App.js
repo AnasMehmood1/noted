@@ -8,10 +8,10 @@ import NoteState from './context/notes/NoteState';
 import { ToastContainer, toast } from 'react-toastify'; // Import ToastContainer and toast
 import 'react-toastify/dist/ReactToastify.css'; // Import CSS for styling
 
-import { useState } from 'react';
+
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
-import Navbar from './components/Navbar/Navbar';
+
 import Home from './components/Home/Home';
 import Firstpage from './components/Firstpage/Firstpage';
 function App() {

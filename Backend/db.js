@@ -1,12 +1,16 @@
-const mongoose = require("mongoose")
-const mongourl = `mongodb+srv://anasmehmoodvip:LHUDAm65fTlS6Iss@cluster0.khl6p8j.mongodb.net/noted?retryWrites=true&w=majority&appName=Cluster0`
-// const mongourl = "mongodb://localhost:27017/noted"
+const mongoose = require("mongoose");
+require('dotenv').config();
 
-const connectToMongo = ()=>{
-    mongoose.connect(mongourl,()=>{
-        console.log("Connected to mongo successfully")
-    })
-}
+const mongourl = process.env.MONGOURl; // Ensure this matches the name in .env
 
-module.exports = connectToMongo
+const connectToMongo = () => {
+    mongoose.connect(mongourl, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+        if (err) {
+            console.error("Error connecting to MongoDB:", err);
+        } else {
+            console.log("Connected to mongo successfully");
+        }
+    });
+};
 
+module.exports = connectToMongo;
